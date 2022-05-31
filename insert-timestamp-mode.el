@@ -6,6 +6,10 @@
 
 (setq insert-timestamp nil)
 (defun insert-timestamp-mode ()
+  "Search for the first occurrence of ':::' and append a date string there.
+Don't use this mode with the insert-timestamp-mode.el file because it will write the date into the source code.
+M-x insert-timestamp-mode will toggle this mode on and off."
+
   (interactive)
   (cond (insert-timestamp       (progn (setq insert-timestamp nil) (message "insert-timestamp-mode is disabled")))
         ((not insert-timestamp) (progn (setq insert-timestamp t)   (message "insert-timestamp-mode is enabled")))))  
